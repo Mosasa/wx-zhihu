@@ -1,0 +1,244 @@
+/* pages/thought/thought.wxss */
+.header{
+  height:400rpx;
+  background: #F8F8F8;
+  z-index: -1;
+}
+.container{
+  width: 90%;
+  height: 700rpx;
+  margin: 0 auto;
+}
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  z-index:1000;
+  display: flex;
+  /* background: greenyellow; */
+  padding: 20rpx 0 20rpx 0;
+}
+.nav1{
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  z-index:1000;
+  display: flex;
+  padding: 20rpx 0 20rpx 0;
+  background: #f8f8f8;
+  align-items: center;
+  box-shadow: 2rpx 2rpx 4rpx 2rpx #888888;
+}
+.title{
+  display: inline-block;
+  flex: 1;
+  font-size: 70rpx;
+  position: relative;
+  left: 30rpx;
+}
+.message, .myThought{
+  position: relative;
+  top: 25rpx;
+  font-size: 25rpx;
+  color: #888;
+}
+
+.nav1 .message, .nav1 .myThought {
+  width: 80rpx;
+}
+.thoughtTitle{
+  padding-right: 20rpx;
+}
+.messageImg, .thoughtImg{
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  position: relative;
+  bottom: 20rpx;
+}
+.messageImg{
+  left: 48rpx;
+}
+.thoughtImg{
+  left: 70rpx;
+}
+
+.nav1 .messageImg, .nav1 .thoughtImg{
+  left: 0rpx;
+}
+
+.nav-bottom{
+   width: 90%;
+   height: 100rpx; 
+   position: relative;
+   left: 30rpx;
+}
+.discuss{
+  position: absolute;
+  top: 150rpx;
+  display: flex;
+}
+.swiper-url{
+  width: 25%;
+  height: 110rpx;
+}
+.discuss-desc{
+  position: relative;
+  left: 10rpx;
+}
+.discuss-desc .discussing{
+  font-size: 25rpx;
+  color: rgb(36, 148, 204);
+  font-weight: bold;
+}
+.discuss-desc .desc-title{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.discuss-desc .desc-question{
+  font-size: 25rpx;
+  color: #666;
+}
+.content{
+  border: 1rpx solid #888;
+  box-shadow:2rpx 2rpx 4rpx 2rpx #888888;
+  border-radius: 8rpx;
+  position: relative;
+  bottom: 250rpx;
+  background: #fff;
+  margin: 0 auto;
+}
+.content .menu{
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.content, .menu{
+  width: 100%;
+  height: 100rpx;
+}
+.hot, .find{
+  display: flex;
+}
+.icon .hot-img{
+  width: 50rpx;
+  height: 40rpx;
+  position: relative;
+  right: 20rpx;
+  top: 5rpx;
+}
+.icon .ffri-img{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  position: relative;
+  right: 20rpx;
+  top: 10rpx;
+}
+.content-list{
+  margin-top: 30rpx;
+}
+.content-item{
+  display: flex;
+}
+.userImg{
+  width: 14%;
+  border: 1rpx 
+}
+.user-name{
+  font-weight: bold;
+}
+.det-time{
+  font-size: 25rpx;
+  color: #888;
+}
+.det-content{
+  font-size: 30rpx;
+}
+.user-detail{
+  flex: 1;
+}
+.user-img{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.transmit{
+  background: #F0F0F0;
+}
+.transmit-content{
+  width: 96%;
+  margin: 0 auto;
+  font-size: 30rpx;
+}
+.transmit-from{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.transmit-from-img{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  position: relative;
+  top: 30rpx;
+}
+.transmit-from-name{
+  position: relative;
+  right: 110rpx;
+  top: 8rpx;
+}
+.transmit-content-img{
+  width: 30%;
+  height: 300rpx;
+}
+.focus{
+  color: rgb(36, 148, 204);
+}
+.heat{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 25rpx;
+}
+.heat text{
+  padding: 0 6rpx;
+}
+.status{
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+  left: 14%;
+}
+.status .imte{
+  padding-left:120rpx;
+}
+.status image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.line1{
+  width: 100%;
+  border-bottom: 1px solid #F8F8F8;
+}
+.edit-view{
+  position: fixed;
+  right: 30rpx;
+  bottom: 100rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: rgb(36, 148, 204);
+}
+.edit-view .edit{
+  width: 50rpx;
+  height: 50rpx;
+}
+.edit-icon{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 25% auto;
+}
+

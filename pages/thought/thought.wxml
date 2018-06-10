@@ -1,0 +1,129 @@
+<scroll-view class="home" scroll-y bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad" bindscroll="scroll">
+ <view class="header">
+    <view wx:if="{{!display}}" class="nav">
+      <view class="title">想法</view>
+      <view class="message">
+        <image class="messageImg" src="{{messageImg}}" wx:if="{{messageImg}}"></image>
+        <text class="messageTitle" >消息</text>
+      </view>
+      <view class="myThought">
+        <image class="thoughtImg" src="{{thoughtImg}}" wx:if="{{thoughtImg}}"></image>
+        <text class="thoughtTitle">我的想法</text>
+      </view>
+    </view>
+    <view wx:else class="nav1">
+        <view class="title">想法</view>
+        <view class="message">
+          <image class="messageImg" src="{{messageImg}}" wx:if="{{messageImg}}"></image>
+        </view>
+        <view class="myThought">
+          <image class="thoughtImg" src="{{thoughtImg}}" wx:if="{{thoughtImg}}"></image>
+        </view>
+    </view>
+    <view class="nav-bottom">
+        <swiper class="swiper" autoplay="true" interval="6000" duration="1000" circular="true" >
+        <block wx:for="{{discussion}}" wx:for-index="index">  
+              <swiper-item class="discuss">
+                <image wx:if="{{item.url}}" src="{{item.url}}" class="swiper-url"/>
+                <view class="discuss-desc">
+                  <view class="discussing">{{item.discussing}}</view>
+                  <view class="desc-title">{{item.title}}</view>
+                  <view class="desc-question">{{item.descQuestion}}
+                    <!-- <swiper class="desc-question" autoplay="true" interval="3000" duration="1000" style="direction: 'vertical'">
+                      <block wx:for="{{item.descQuestion}}" wx:if="{{item.descQuestion}}">
+                        <swiper-item class="question">
+                          <view class="question-item">{{item.questionItem}}</view>
+                        </swiper-item>
+                      </block>
+                    </swiper> -->
+                  </view> 
+                </view>
+              </swiper-item>
+          </block>
+        </swiper>
+    </view>
+  </view>
+<!-- <scroll-view scroll-y="true" class="list"> -->
+  <view class="container">
+    <view class="content">
+      <view class="menu">
+        <!-- 热门更新了 -->
+        <view class="hot">
+          <view class="icon">
+            <image class="hot-img" src="{{hotImg}}" wx:if="{{hotImg}}"></image>
+          </view>
+          <view class="hotUpdate">热门想法</view>
+        </view>
+        <view class="line" style="color: #888">|</view>
+      <!-- 发现知友 -->
+        <view class="find">
+          <view class="icon">
+            <image class="ffri-img" src="{{ffriImg}}" wx:if="{{ffriImg}}"></image>
+          </view>
+          <view class="findFriend">发现知友</view>
+        </view>
+      </view>
+      <view class="content-list" wx:for="{{updateContent}}" wx:key="{{item.id}}">
+      <view class="content-item" >
+        <view class="userImg">
+          <image class="user-img" src="{{item.userImg}}"></image>
+        </view>
+        <view class="user-detail">
+          <view class="user-name">{{item.userName}}</view>
+          <view class="det-time">{{item.detTime}}</view>
+          <view class="det-content">{{item.detContent}}</view>
+          <view class="det-img" src="{{item.detImg}}" wx:if="{{item.detImg}}"></view>
+          <!-- 转发内容 -->
+          <view class="transmit" >
+            <view class="transmit-content">
+            <view class="transmit-from">
+              <image class="transmit-from-img" src="{{item.transmitFromImg}}"></image>
+              <view class="transmit-from-name">{{item.transmitFromName}}</view>
+              <view class="focus">+关注</view>
+            </view>
+            <view class="transmit-content">
+              <view class="transmit-content-det">{{item.transmitContentDet}}</view>
+              <image class="transmit-content-img" src="{{item.transmitContentImg}}" 
+              wx:if="{{item.transmitContentImg}}"></image>
+              <view class="heat">
+                <text>{{item.transmitNumber}}转发</text>
+                <text>.</text>
+                <text>{{item.commentNumber}}评论</text>
+                <text>.</text>
+                <text>{{item.supportNumber}}鼓掌</text>
+              </view>
+            </view> 
+          </view>         
+          </view>
+        </view>
+      </view>
+      <view class="status">
+        <view class="status-trans">
+          <image class="trans" src="/assets/icons/zhuanfa.png"></image>
+          <text class="trans-number">{{transNumber}}</text>
+        </view>
+        <view class="status-comm imte" >
+          <image class="comm" src="/assets/icons/pinglun.png"></image>
+          <text class="comm-number">{{commNumber}}</text>
+        </view>
+        <view class="status-sup imte">
+          <image class="sup" src="/assets/icons/zan2.png"></image>
+          <text class="sup-number">{{supNumber}}</text>
+        </view>
+      </view>
+      <view class="line1"></view>
+    </view>
+    <!-- <view class="body-view">  
+      <loading hidden="{{hidden}}" bindchange="loadingChange">  
+        加载中...  
+      </loading>  
+    </view>   -->
+    </view>
+  </view>
+  <view class="edit-view">
+    <view class="edit-icon">
+      <image class="edit" src="/assets/icons/edit.png"></image>
+    </view>
+  </view>
+<!-- </scroll-view> -->
+</scroll-view>

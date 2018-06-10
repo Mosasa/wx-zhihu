@@ -1,0 +1,177 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.header-top {
+  width: 90%;
+  background-color: #ddd;
+  border-radius: 20rpx;
+  margin: 10rpx auto;
+  font-size: 32rpx;
+  color: #888;
+  display: flex;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-search, .icon-edit {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.nav-search {
+  border-right: 1rpx solid #888;
+  width: 76%;
+}
+
+.menu {
+  display: flex;
+  position: relative;
+}
+
+.menu-item {
+  width: 33.3%;
+  text-align: center;
+  font-size: 14px;
+  padding: 16rpx 0;
+}
+
+.line {
+  width: 33.3%;
+  height: 6rpx;
+  bottom: 1rpx;
+  background-color: #333;
+  position: absolute;
+  transition: left .5s;
+  border-radius: 5px;
+}
+
+.container-swiper {
+  padding-top: 200rpx;
+  background-color: #ebebeb;
+  height: 1000rpx;
+}
+scroll-view{
+  display: inline;
+}
+.container-list {
+  height: 1000rpx;
+}
+
+.container-item {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.container-status-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.status {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.title {
+  font-weight: bold;
+  color: #1a1a1a;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.content { 
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.content .desc {
+  font-size: 14px;
+  color: #444;
+}
+
+.content .desc-image, .title-image{
+  width: 240rpx;
+  height: 160rpx;
+  flex-shrink: 0;
+  border-radius: 10rpx;
+}
+.top-image{
+  width: 100%;
+  height: 200rpx;
+}
+/*热榜样式*/
+.col>.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12{
+  overflow: hidden;
+}
+.col-1{
+  width: 8.33333333333333%;
+}
+.col-2{
+  width: 16.66666666666666%;
+}
+.col-3{
+  width: 25%;
+}
+.col-4{
+  width: 33.33333333333333%;
+}
+.col-5{
+  width: 41.66666666666666%;
+}
+.col-6{
+  width: 50%;
+}
+.col-7{
+  width: 58.33333333333333%;
+}
+.col-8{
+  width: 66.66666666666666%;
+}
+.col-9{
+  width: 75%;
+}
+.col-10{
+  width: 83.33333333333333%;
+}
+.col-11{
+  width: 91.66666666666666%;
+}
+.col-12{
+  width: 100%;
+}
+.col{
+  display: flex;
+  font-family: -apple-system,'Helvetica Neue', sans-serif;
+}
+.col-1{
+  color: red;
+  font-weight: bold;
+}
+.col-7 .status{
+  position: relative;
+  top: 10rpx;
+}
+.row{
+  display: block;
+  margin: 0;
+}
+

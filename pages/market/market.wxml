@@ -1,0 +1,14 @@
+<!--pages/market/market.wxml-->
+<view class="market">
+  <view class="header">
+    <view class="header-top">
+      <view class="user-img">
+        <image class="userImg" src="{{userImg}}"></image>
+      </view>     
+      <navigator class="nav-search">
+        <image src="/assets/icons/icon-search.png" class="icon icon-search"></image>
+        <text class="text-search">搜索知乎内容</text>
+      </navigator>
+    </view>
+  </view>
+</view>

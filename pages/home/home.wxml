@@ -1,0 +1,96 @@
+<!--index.wxml-->
+<view class="home">
+  <view class="header">
+    <view class="header-top">
+      <navigator url="../search/search" class="nav-search" >
+        <image src="/assets/icons/icon-search.png" class="icon icon-search"></image>
+        <text class="text-search">热搜第一</text>
+      </navigator>
+      <navigator class="nav-question">
+        <image src="/assets/icons/icon-edit.png" class="icon icon-edit"></image>
+        <text class="text-question">提问</text>
+      </navigator>
+    </view>
+    <view class="menu">
+      <view class="menu-item" data-index="0" bindtap="switchTab">关注</view>
+      <view class="menu-item" data-index="1" bindtap="switchTab">推荐</view>
+      <view class="menu-item" data-index="2" bindtap="switchTab">热榜</view>
+    </view>
+    <view class="line" style="{{lineStyle}}"></view>
+  </view>
+  <swiper class="container-swiper" current="{{currentIndex}}" bindchange="handleChangeTab">
+    <swiper-item>
+        <scroll-view scroll-y="true" class="container-list" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px;"   
+         bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh"> 
+          <!-- 关注 -->
+          <view class="container-item" wx:for="{{articles}}" wx:key="{{item.id}}">
+            <view class="container-status-info">
+              <image src="{{item.status.avatarUrl}}" class="avatar"></image>
+              <text class="status">{{item.status.user}}{{item.status.text}}*{{item.status.time}}</text>
+            </view>
+            <view class="title">{{item.title}}</view>
+            <view class="content">
+                <view class="desc">{{item.desc}}</view>
+                <image wx:if="{{item.descImage}}" class="desc-image" src="{{item.descImage}}"></image>
+            </view>
+            <view></view>
+          </view>
+        </scroll-view>
+        <view class="body-view">  
+            <loading hidden="{{hidden}}" bindchange="loadingChange">  
+                加载中...  
+            </loading>  
+        </view> 
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="container-list">
+        <!--推荐 -->
+        <view class="container-item" wx:for="{{recommonds}}" wx:key="{{item.id}}">
+          <view class="topImage">
+            <image class="top-image" wx:if="{{item.topImage}}" src="{{item.topImage}}"></image>
+          </view>
+          <view class="title">{{item.title}}</view>
+          <view class="content">
+              <view class="desc">{{item.desc}}</view>
+              <image wx:if="{{item.descImage}}" class="desc-image" src="{{item.descImage}}"></image>
+          </view>
+          <view></view>
+        </view>
+      </scroll-view>
+    </swiper-item> 
+    <!-- <swiper-item class="hostList">
+        <scroll-view scroll-y="true" class="container-list">
+           热榜 -->
+            <!-- <view class="container-item" wx:for="{{hotList}}" wx:key="{{item.id}}">
+              <view class="ranking">{{item.rank}}</view>
+              <view class="content">
+                  <view class="title">{{item.title}}</view>
+                  <view class="status">{{item.status}}</view>
+              </view>
+              <view class="title-image">
+                  <image wx:if="{{item.titleImage}}" class="title-image" src="{{item.titleImage}}"></image>
+              </view>
+              <view></view>
+            </view>
+          </scroll-view>
+    </swiper-item>-->
+    <swiper-item>
+    <scroll-view scroll-y="true" class="container-list">
+       <view class="container-item" wx:for="{{hotList}}" wx:key="{{item.id}}">
+          <view class="row">
+            <view class="col">
+              <view class="col-1">{{item.rank}}</view>
+              <view class="col-7">
+                <view class="title">{{item.title}}</view>
+                <view class="status">{{item.status}}</view>
+              </view>
+              <view class="col-4">
+               <image wx:if="{{item.titleImage}}" class="title-image" src="{{item.titleImage}}"></image>
+              </view>
+            </view>
+         </view>
+       </view>
+     </scroll-view>
+   </swiper-item>
+  </swiper>
+</view>

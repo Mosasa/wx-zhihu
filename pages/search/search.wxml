@@ -1,0 +1,34 @@
+<view class="search">
+  <view class="header">
+    <view class="header-top">    
+      <view class="nav-search">
+        <image bindtap="backTo" src="/assets/icons/jt.png" class="icon icon-search"></image>
+        <input type="text" placeholder="搜索知乎内容" class="text-search"  bindconfirm="bindconfirm" value="{{searchContext}}"/>
+      </view>
+    </view>
+  </view>
+  <view class="container">
+    <view class="content">
+        <view class="hot-search">
+            <text class="zhhs">知乎热搜</text>
+            <!-- <view class="hot-search-item">{{}}</view> -->
+            <view class="search-item">
+                <view class="hot-search-item" wx:for="{{hots}}" wx:key="{{item.id}}">
+                <view class="hot-item">
+                  <text>{{item.text}}</text>
+                  <view class="hot-status" >{{hotStatus}}</view>
+                </view>
+            </view>         
+            </view>
+          </view>
+          <view class="search-history">
+            <text class="zhhs">搜索历史</text>
+            <view class="search-history-item" wx:for="{{historyRecord}}" wx:key="{{index}}">
+              <image class="search-history-icon" src="/assets/icons/shizhong.png"></image>
+              <text>{{item.recordItem}}</text>
+              <image data-index="{{index}}" class="delete" src="/assets/icons/delete.png" bindtap="deleteRecord"></image>
+            </view>
+          </view>
+    </view>
+  </view>
+</view>

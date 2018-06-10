@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/market/market",
+    "pages/thought/thought",
+    "pages/logs/logs",
+    "pages/message/message",
+    "pages/user/user",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#888",
+    "navigationBarTitleText": "知乎",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ebebeb" 
+  },
+  "tabBar": {
+    "selectedColor": "lightblue",
+    "borderStyle": "#333",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "text": "首页",
+        "iconPath": "assets/icons/icon-home.png",
+        "selectedIconPath": "assets/icons/icon-home.png",
+        "pagePath": "pages/home/home"
+      },
+      {
+        "text": "想法",
+        "iconPath": "assets/icons/icon-thunk.png",
+        "selectedIconPath": "assets/icons/icon-thunk.png",
+        "pagePath": "pages/thought/thought"
+      },
+      {
+        "text": "市场",
+        "iconPath": "assets/icons/icon-market.png",
+        "selectedIconPath": "assets/icons/icon-market.png",
+        "pagePath": "pages/market/market"
+      },
+      {
+        "text": "通知",
+        "iconPath": "assets/icons/icon-message.png",
+        "selectedIconPath": "assets/icons/icon-message.png",
+        "pagePath": "pages/message/message"
+      },
+      {
+        "text": "我的",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home-active.png",
+        "pagePath": "pages/user/user"
+      }
+    ]
+  }
+}

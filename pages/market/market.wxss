@@ -1,0 +1,25 @@
+/* pages/market/market.wxss */
+.header-top{
+  position: fixed;
+  width: 90%;
+  top: 0;
+  left: 0; 
+  display: flex;
+}
+.nav-search{
+  width: 80%;
+  background-color: #ddd;
+  border-radius: 10rpx;
+  margin: 10rpx auto;
+  font-size: 32rpx;
+  color: #888;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-search, .icon-edit{
+  width: 30rpx;
+  height: 30rpx;
+  /* margin-right: rpx; */
+}

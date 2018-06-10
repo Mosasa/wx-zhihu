@@ -1,0 +1,87 @@
+/* pages/search/search.wxss */
+.header-top{
+  width: 100%;
+  height: 100rpx;
+  top: 0;
+  left: 0;
+  box-shadow: 2rpx 2rpx 4rpx 2rpx #888888;
+}
+.nav-search{
+  width: 90%;
+  height: 70rpx;
+  color: #888;
+  background:silver;
+  border-radius: 15rpx;
+  margin: 0 auto;
+  position: relative;
+  top: 15rpx;
+  display: flex;
+}
+.icon-search{
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-top: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.text-search{
+  padding-top: 10rpx;
+}
+.container{
+  width: 100%;
+}
+.content{
+  width: 90%;
+  height: 600rpx;
+  position: absolute;
+  top: 130rpx;
+}
+.hot-search-icon{
+  width: 28rpx;
+  height: 28rpx;
+}
+.zhhs{
+  font-weight: bold;
+}
+.search-item{
+  display: flex;
+  flex-wrap:wrap;
+  line-height: 80rpx;
+}
+.hot-status{
+  display: none;
+}
+.hot-search-item text{
+  font-size: 28rpx;
+  height: 50rpx;
+  color: #888;
+  background: Gainsboro;
+  padding: 6rpx 14rpx;
+  border-radius: 46rpx;
+  margin: 0 20rpx;
+}
+.search-history{
+  width: 90%;
+  display: inline-block;
+  overflow: hidden;
+}
+.search-history-item{
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #888;
+  font-size: 26rpx;
+  border-bottom: 1px solid silver;
+}
+.search-history-icon{
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 20rpx;
+}
+.delete{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top: 30rpx;
+}
