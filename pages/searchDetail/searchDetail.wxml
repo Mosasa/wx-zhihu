@@ -1,0 +1,32 @@
+<view class="searchDetail">
+  <view class="header">
+    <view class="header-top">
+      <navigator url="../search/search" class="nav-search" >
+        <image src="/assets/icons/jt.png" class="icon icon-search"></image>
+        <text class="text-search">勇士火箭</text>
+      </navigator>
+      <navigator class="nav-question">
+        <text class="text-question">综合</text>
+        <image src="/assets/icons/xiajiantou.png" class="icon icon-down"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="container">
+      <scroll-view scroll-y="true" class="container-list" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px;"  bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh"> 
+          <view class="container-item" wx:for="{{articles}}" wx:key="{{item.id}}">
+            <view class="title">{{item.title}}</view>
+            <view class="content">
+               <view class="desc">
+                 <text>{{item.desc}}</text>
+                 <view class="heat">
+                    <text>{{item.supportNumber}}赞同</text>
+                    <text>.</text>
+                    <text>{{item.commentNumber}}评论</text>
+                  </view>
+                </view>
+               <image wx:if="{{item.descImage}}" class="desc-image" src="{{item.descImage}}"></image>
+            </view>
+           </view>
+        </scroll-view>
+  </view>
+</view>

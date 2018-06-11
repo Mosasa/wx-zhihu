@@ -1,3 +1,4 @@
+/* pages/searchDetail/searchDetail.wxss */
 .header {
   position: fixed;
   top: 0;
@@ -7,7 +8,6 @@
   z-index: 1000;
   border-bottom: 1rpx solid #ccc;
 }
-
 .header-top {
   width: 90%;
   background-color: #ddd;
@@ -21,75 +21,34 @@
   justify-content: space-between;
   align-items: center;
 }
-
-.icon-search, .icon-edit {
+.icon-search, .icon-down {
   width: 30rpx;
   height: 30rpx;
   margin-right: 20rpx;
 }
-
 .nav-search {
   border-right: 1rpx solid #888;
   width: 76%;
 }
-
-.menu {
-  display: flex;
-  position: relative;
-}
-
-.menu-item {
-  width: 33.3%;
-  text-align: center;
-  font-size: 14px;
-  padding: 16rpx 0;
-}
-
-.line {
-  width: 33.3%;
-  height: 6rpx;
-  bottom: 1rpx;
-  background-color: #333;
-  position: absolute;
-  transition: left .5s;
-  border-radius: 5px;
-}
-
-.container-swiper {
-  padding-top: 200rpx;
-  background-color: #ebebeb;
-  height: 1000rpx;
-}
 scroll-view{
   display: inline;
 }
+.container{
+    padding-top: 200rpx;
+    background-color: #ebebeb;
+    height: 1000rpx;
+}
 .container-list {
   height: 1000rpx;
+  margin: 0 auto;
+  position: absolute;
+  top: 100rpx;
 }
-
 .container-item {
   background: #fff;
   padding: 30rpx;
   margin-bottom: 20rpx;
 }
-
-.container-status-info {
-  display: flex;
-  align-items: center;
-}
-
-.avatar {
-  width: 56rpx;
-  height: 56rpx;
-  border-radius: 50%;
-  margin-right: 10rpx;
-}
-
-.status {
-  color: #ccc;
-  font-size: 14px;
-}
-
 .title {
   font-weight: bold;
   color: #1a1a1a;
@@ -114,24 +73,11 @@ scroll-view{
   flex-shrink: 0;
   border-radius: 10rpx;
 }
-.top-image{
-  width: 100%;
-  height: 200rpx;
+.heat{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 25rpx;
 }
-.col{
-  display: flex;
-  font-family: -apple-system,'Helvetica Neue', sans-serif;
+.heat text{
+  padding: 0 6rpx;
 }
-.col-1{
-  color: red;
-  font-weight: bold;
-}
-.col-7 .status{
-  position: relative;
-  top: 10rpx;
-}
-.row{
-  display: block;
-  margin: 0;
-}
-

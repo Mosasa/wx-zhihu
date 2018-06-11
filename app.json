@@ -6,14 +6,15 @@
     "pages/logs/logs",
     "pages/message/message",
     "pages/user/user",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/searchDetail/searchDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#888",
     "navigationBarTitleText": "知乎",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#ebebeb" 
+    "backgroundColor": "#ebebeb"
   },
   "tabBar": {
     "selectedColor": "lightblue",
@@ -29,7 +30,7 @@
       {
         "text": "想法",
         "iconPath": "assets/icons/icon-thunk.png",
-        "selectedIconPath": "assets/icons/icon-thunk.png",
+        "selectedIconPath": "assets/icons/icon-thunk-active.png",
         "pagePath": "pages/thought/thought"
       },
       {

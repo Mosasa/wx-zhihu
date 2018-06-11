@@ -15,6 +15,7 @@ Page({
       hotStatus:111
     },{
       id:'02',
+      
       text:'2018高考作文',
       hotStatus:110
     },{
@@ -31,19 +32,38 @@ Page({
       hotStatus:50
     },{
       id:'06',
+      hotImg:'/assets/icons/hot.png',
       text:'幸存者偏差',
       hotStatus:102
     },{
       id:'07',
+      hotImg:'/assets/icons/hot.png',
       text:'勇士横扫骑士',
       hotStatus:114
     },{
       id:'08',
+      hotImg:'/assets/icons/hot.png',
       text:'参加今年的高考体检',
       hotStatus:90
     }],
-    searchContext:''
-    
+    searchContext:'',
+    haveSerachLike: false,
+    searchLikeList: [],
+    searchLikeAllList: [{
+      text: '勇士火箭'
+    }, {
+      text: '勇士马刺'
+    }, {
+      text: '勇士队'
+    }, {
+      text: '勇士鹈鹕'
+    }, {
+      text: '勇士火箭g3'
+    }, {
+      text: '勇士火箭g4'
+    },{
+      text:'...'
+    }]
   },
 
   /**
@@ -126,21 +146,43 @@ Page({
   },
   bindconfirm: function(e){
     console.log(e);
-    var historyRecord = this.data.historyRecord;
+    // var historyRecord = this.data.historyRecord;
     var recordItem = e.detail.value;
-    historyRecord.unshift({
-      id:'0',
-      recordItem: recordItem
-    });
-    wx.setStorage({
-      key: 'historyRecord',
-      data: historyRecord
+    // historyRecord.unshift({
+    //   id: 0,
+    //   recordItem: recordItem
+    // });
+    // wx.setStorage({
+    //   key: 'historyRecord',
+    //   data: historyRecord
+    // })
+    // this.setData({
+    //   historyRecord:historyRecord
+    // });
+    this.saveHistory({
+      id: 0,
+      recordItem
+    })
+    wx.navigateTo({
+      url: '../searchDetail/searchDetail',
     })
     this.setData({
-      historyRecord:historyRecord
-    });
-    this.setData({
       searchContext:''
+    })
+  },
+  changeSearch (e) {
+    let value = e.detail.value
+    if (value === '') {
+      this.setData({
+        haveSerachLike: false
+      })
+      return
+    }
+    let arr = this.data.searchLikeAllList.filter(item => item.text.indexOf(value) > -1)
+    console.log(arr)
+    this.setData({
+      haveSerachLike: true,
+      searchLikeList: arr,
     })
   },
   backTo () {
@@ -161,6 +203,26 @@ Page({
     wx.setStorage({
       key: 'historyRecord',
       data: filterArr
+    })
+  },
+  turnTo: function(e){
+    this.saveHistory({
+      id: 0,
+      recordItem: e.target.dataset.param
+    })
+    wx.navigateTo({
+      url: '../searchDetail/searchDetail'
+    })
+  },
+  saveHistory (param) {
+    let arr = this.data.historyRecord
+    arr.unshift(param)
+    wx.setStorage({
+      key: 'historyRecord',
+      data: arr
+    })
+    this.setData({
+      historyRecord: arr
     })
   }
 })

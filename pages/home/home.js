@@ -34,6 +34,10 @@ Page({
     hidden: true,  
     scrollTop: 0,  
     scrollHeight: 0,
+    allPages: '',    // 总页数
+    currentPage: 1,  // 当前页数  默认是1
+    loadMoreData: '加载更多……',
+    hideBottom: true,
     articles: [{
       id: '0',
       title: '一个脑洞.炸鸡在多大程度上比黄瓜热量高？',
@@ -165,14 +169,31 @@ Page({
     var that = this;  
     GetList(that);
   },
-  bindDownLoad: function(){
-    var that = this;
-    GetList(that);
-  },
   scroll: function(event){
     this.setData({
       scrollTop: event.detail.scrollTop
     })
+  },
+  bindDownLoad: function(){
+    var that = this;
+    //当前页是最后一页
+    if (that.data.currentPage == that.data.allPages){
+      that.setData({
+        loadMoreData: '已经到顶'
+      })
+      return;
+    }
+    setTimeout(function(){
+      console.log('上拉加载更多');
+      var currentPage = that.data.currentPage;
+      currentPage = currentPage + 1;
+      that.setData({
+        currentPage: currentPage,
+        hideBottom: false  
+      })
+      that.getPage();  
+    },300);
+    // GetList(that);
   },
   refresh: function(event){
     page = 1;  
@@ -209,6 +230,29 @@ Page({
   },  
   onReachBottom: function () {  
     console.log("上拉");  
-  }  
+  },
+  // 获取数据  pageIndex：页码参数
+  getPage: function(){
+    var that = this;
+    var pageIndex = that.data.currentPage;
+    wx.request({
+      url: '',
+      data: {
+        page: pageIndex
+      },
+      success: function(res){
+        if(pageIndex != 1){ // 加载更多
+          console.log('加载更多');
+          var tempArray = that.data.articles;
+          tempArray = tempArray.concat(that.data.articles);
+          that.setData({
+            allPages: that.data.allPages,
+            articles: tempArray,
+            hideBottom: true
+          })
+        }
+      }
+    })
+  },
 })
 

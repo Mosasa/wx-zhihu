@@ -21,15 +21,15 @@
         </view>
     </view>
     <view class="nav-bottom">
-        <swiper class="swiper" autoplay="true" interval="6000" duration="1000" circular="true" >
+        <swiper class="swiper" autoplay="true" interval="2000" duration="1000" circular="true" >
         <block wx:for="{{discussion}}" wx:for-index="index">  
               <swiper-item class="discuss">
                 <image wx:if="{{item.url}}" src="{{item.url}}" class="swiper-url"/>
                 <view class="discuss-desc">
                   <view class="discussing">{{item.discussing}}</view>
                   <view class="desc-title">{{item.title}}</view>
-                  <view class="desc-question">{{item.descQuestion}}
-                    <!-- <swiper class="desc-question" autoplay="true" interval="3000" duration="1000" style="direction: 'vertical'">
+                  <view class="desc-question"> {{item.descQuestion}}
+                    <!-- <swiper class="desc-question" autoplay="true" interval="3000" duration="1000" vertical="true">
                       <block wx:for="{{item.descQuestion}}" wx:if="{{item.descQuestion}}">
                         <swiper-item class="question">
                           <view class="question-item">{{item.questionItem}}</view>
